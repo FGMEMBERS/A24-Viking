@@ -7,54 +7,72 @@
   <model>
     <path>Aircraft/A24-Viking/Models/Panel/Instruments/ai/ai.xml</path>
     <offsets>
-      <x-m> 0.193 </x-m>
-      <y-m> 0.257 </y-m>
-      <z-m> 0.029 </z-m>
+      <x-m>  0.197 </x-m>
+      <y-m> -0.117 </y-m>
+      <z-m>  0.021 </z-m>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/A24-Viking/Models/Panel/Instruments/ASI/ASI.xml</path>
     <offsets>
-      <x-m>  0.201 </x-m>
-      <y-m>  0.159 </y-m>
-      <z-m> -0.020 </z-m>
+      <x-m>  0.2036 </x-m>
+      <y-m> -0.240 </y-m>
+      <z-m>  0.021 </z-m>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/A24-Viking/Models/Panel/Instruments/Altimeter/Altimeter.xml</path>
     <offsets>
-      <x-m>  0.201 </x-m>
-      <y-m>  0.367 </y-m>
-      <z-m> -0.040 </z-m>
+      <x-m>  0.206 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.081 </z-m>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/A24-Viking/Models/Panel/Instruments/VSI/VSI.xml</path>
     <offsets>
-      <x-m> 0.201 </x-m>
-      <y-m> 0.128 </y-m>
-      <z-m> 0.081 </z-m>
+      <x-m> 0.206 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.021 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/A24-Viking/Models/Panel/Instruments/RPM/RPM.xml</path>
+    <path>Aircraft/A24-Viking/Models/Panel/Instruments/empty/empty.xml</path>
     <offsets>
-      <x-m>  0.201 </x-m>
-      <y-m>  0.398 </y-m>
-      <z-m> -0.139 </z-m>
+      <x-m>  0.206 </x-m>
+      <y-m> -0.117 </y-m>
+      <z-m> -0.081 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/A24-Viking/Models/Panel/Instruments/empty/empty.xml</path>
+    <offsets>
+      <x-m>  0.206 </x-m>
+      <y-m>  0.208 </y-m>
+      <z-m> -0.048 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/A24-Viking/Models/Panel/Instruments/empty/empty.xml</path>
+    <offsets>
+      <x-m> 0.206 </x-m>
+      <y-m> 0.117 </y-m>
+      <z-m> 0.021 </z-m>
     </offsets>
   </model>
 
   <model>
     <path>Aircraft/A24-Viking/Models/Panel/Instruments/MagneticCompass/MagneticCompass.xml</path>
     <offsets>
-      <x-m> 0.209 </x-m>
+      <x-m> 0.213 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 0.187 </z-m>
+      <z-m> 0.103 </z-m>
     </offsets>
   </model>
 
