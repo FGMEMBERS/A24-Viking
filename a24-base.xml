@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/A24-Viking/a24-splash.rgb</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/A24-Viking/Sounds/a24-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/A24-Viking/Models/a24.xml</path>
+    </model>
+
+    <a24>
+      <state type="int">0</state>
+      <airspeed-kmh type="float">0.0</airspeed-kmh>
+      <engine-rpm type="float">0.0</engine-rpm>
+    </a24>
+
+    <submodels>
+      <serviceable>true</serviceable>
+      <path>Aircraft/A24-Viking/Models/Wakes/Wakes.xml</path>
+    </submodels>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+    </multiplay> 
+
+    <flaps>
+      <setting>0.00</setting> <!-- Cruise -->
+      <setting>0.50</setting> <!-- Half -->
+      <setting>1.0</setting> <!-- Full -->
+    </flaps>
+
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/a24-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <a24>
+      <file>Aircraft/A24-Viking/Nasal/doors.nas</file>
+    </a24>    
+  </nasal>
+ 
+</PropertyList>
+
