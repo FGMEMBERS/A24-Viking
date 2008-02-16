@@ -146,7 +146,7 @@
   <rumble>
    <name>rumble</name>
    <mode>looped</mode>
-   <path>Aircraft/A24-Viking/Sounds/flotte.wav</path>
+   <path>Sounds/wave.wav</path>
    <condition>
     <or>
      <property>/gear/gear[3]/wow</property>
@@ -165,7 +165,7 @@
 
   <squeal>
    <name>water</name>
-   <path>Aircraft/A24-Viking/Sounds/flotte.wav</path>
+   <path>Sounds/wave.wav</path>
    <condition>
     <or>
      <property>/gear/gear[3]/wow</property>
