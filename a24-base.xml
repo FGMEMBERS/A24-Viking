@@ -11,7 +11,7 @@
     <fuel-fraction>1.0</fuel-fraction>
 
     <startup>
-      <splash-texture>Aircraft/A24-Viking/a24-splash.rgb</splash-texture>
+      <splash-texture>Aircraft/A24-Viking/a24-splash.png</splash-texture>
     </startup>
 
     <sound>
@@ -27,11 +27,6 @@
       <airspeed-kmh type="float">0.0</airspeed-kmh>
       <engine-rpm type="float">0.0</engine-rpm>
     </a24>
-
-    <submodels>
-      <serviceable>true</serviceable>
-      <path>Aircraft/A24-Viking/Models/Wakes/Wakes.xml</path>
-    </submodels>
 
     <multiplay>
       <chat_display>1</chat_display>

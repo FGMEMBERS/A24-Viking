@@ -7,7 +7,7 @@ OBJECT poly
 name "panel"
 data 9
 panel.001
-texture "background.rgb"
+texture "background.png"
 texrep 1 1
 crease 30.000000
 numvert 327

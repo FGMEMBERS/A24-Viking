@@ -51,6 +51,71 @@
     <object-name>propblur</object-name>
   </animation>
 
+  <!-- Eclaboussures avant -->
+  <model>
+    <path>Aircraft/A24-Viking/Models/Effects/noze.xml</path>
+    <offsets>
+      <x-m> -3.336 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.891 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> -45.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> 
+
+  <!-- Eclaboussures centrale -->
+  <model>
+    <path>Aircraft/A24-Viking/Models/Effects/middle.xml</path>
+    <offsets>
+      <x-m> -0.962 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.947 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> -45.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> 
+
+  <!-- Trainée arrière -->
+  <model>
+    <path>Aircraft/A24-Viking/Models/Effects/tail.xml</path>
+    <offsets>
+      <x-m>  1.265 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.763 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> -45.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> 
+
+  <!-- Trainée flotteur gauche -->
+  <model>
+    <path>Aircraft/A24-Viking/Models/Effects/floatG.xml</path>
+    <offsets>
+      <x-m> -1.205 </x-m>
+      <y-m> -4.400 </y-m>
+      <z-m> -0.350 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> -45.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> 
+
+  <!-- Trainée flotteur droit -->
+  <model>
+    <path>Aircraft/A24-Viking/Models/Effects/floatD.xml</path>
+    <offsets>
+      <x-m> -1.205 </x-m>
+      <y-m>  4.400 </y-m>
+      <z-m> -0.350 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> -45.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model> 
+
   <!-- Planches de bord -->
   <model>
     <path>Aircraft/A24-Viking/Models/Panel/panel.xml</path>
