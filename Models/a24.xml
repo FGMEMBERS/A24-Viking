@@ -4,6 +4,15 @@
 
   <path>a24.ac</path>
 
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery.update("Aircraft/A24-Viking/Models/Liveries");
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
