@@ -87,7 +87,7 @@
     <object-name>echappe</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-    <property-base>/sim/model/livery</property-base>
+    <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
   </animation>
