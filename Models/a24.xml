@@ -28,7 +28,6 @@
     <object-name>axeG</object-name>
     <object-name>axeD</object-name>
     <object-name>axeA</object-name>
-    <object-name>pilote</object-name>
     <object-name>gouvernail</object-name>
     <object-name>echappe</object-name>
     <object-name>porteG</object-name>
@@ -50,6 +49,49 @@
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
   </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>coque</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>derive</object-name>
+    <object-name>aile</object-name>
+    <object-name>moteur</object-name>
+    <object-name>bol</object-name>
+    <object-name>helice</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>volet</object-name>
+    <object-name>direction</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>flotteurG</object-name>
+    <object-name>flotteurD</object-name>
+    <object-name>sousflotteurG</object-name>
+    <object-name>sousflotteurD</object-name>
+    <object-name>axeG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>gouvernail</object-name>
+    <object-name>echappe</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <property-base>/sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+  </animation>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/A24-Viking/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -1.776 </x-m>
+      <y-m> -0.221 </y-m>
+      <z-m> -0.616 </z-m>
+    </offsets>
+  </model>
 
   <!-- Eclaboussures avant -->
   <model>
@@ -128,18 +170,6 @@
       <heading-deg> 0.000 </heading-deg>
     </offsets>
   </model>
-
-  <!-- Pilote invisible depuis le cockpit -->
-  <animation>
-    <type>select</type>
-    <object-name>pilote</object-name>
-    <condition>
-      <greater-than>
-        <property>/sim/current-view/view-number</property>
-        <value>0</value>
-      </greater-than>
-    </condition>
-  </animation>
 
   <animation>
     <name>HeliceComplete</name>

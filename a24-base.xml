@@ -4,7 +4,7 @@
 
   <sim include="Nasal/views.xml">
 
-    <author>BARANGER Emmanuel (3D), GEOFFROY Pierre (FDM)</author>
+    <author>BARANGER Emmanuel (3D), GEOFFROY Pierre (FDM), Laurent HAYVEL (Livery)</author>
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
 
@@ -38,6 +38,22 @@
       <setting>1.0</setting> <!-- Full -->
     </flaps>
 
+    <menubar>
+      <default>
+        <menu n="10">
+          <label>Aeroprakt 24 - Viking</label>
+          <enabled type="bool">true</enabled>
+          <item>
+            <label>Select Livery</label>
+            <binding>
+              <command>nasal</command>
+              <script>aircraft.livery.dialog.toggle()</script>
+          </binding>
+          </item>
+        </menu>
+      </default>
+    </menubar>
+
   </sim>
 
   <input>
@@ -47,6 +63,7 @@
   <nasal>
     <a24>
       <file>Aircraft/A24-Viking/Nasal/doors.nas</file>
+      <file>Aircraft/A24-Viking/Nasal/liveries.nas</file>
     </a24>    
   </nasal>
  
