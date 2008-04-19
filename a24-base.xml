@@ -20,6 +20,9 @@
 
     <model>
       <path archive="y">Aircraft/A24-Viking/Models/a24.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
     </model>
 
     <a24>

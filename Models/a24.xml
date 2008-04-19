@@ -6,7 +6,7 @@
 
   <nasal>
     <load>
-      var livery_update = aircraft.livery.update("Aircraft/A24-Viking/Models/Liveries");
+      var livery_update = aircraft.livery_update.new("Aircraft/A24-Viking/Models/Liveries", 10);
     </load>
     <unload>
       livery_update.stop();
