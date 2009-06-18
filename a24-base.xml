@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -33,29 +33,23 @@
 
     <multiplay>
       <chat_display>1</chat_display>
-    </multiplay> 
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
 
     <flaps>
-      <setting>0.00</setting> <!-- Cruise -->
-      <setting>0.50</setting> <!-- Half -->
-      <setting>1.0</setting> <!-- Full -->
+      <setting> 0.00 </setting> <!-- Cruise -->
+      <setting> 0.50 </setting> <!-- Half   -->
+      <setting> 1.00 </setting> <!-- Full   -->
     </flaps>
 
-    <menubar>
-      <default>
-        <menu n="10">
-          <label>Aeroprakt 24 - Viking</label>
-          <enabled type="bool">true</enabled>
-          <item>
-            <label>Select Livery</label>
-            <binding>
-              <command>nasal</command>
-              <script>aircraft.livery.dialog.toggle()</script>
-          </binding>
-          </item>
-        </menu>
-      </default>
-    </menubar>
+    <menubar include="Dialogs/a24-menu.xml"/>
 
   </sim>
 
@@ -67,6 +61,8 @@
     <a24>
       <file>Aircraft/A24-Viking/Nasal/doors.nas</file>
       <file>Aircraft/A24-Viking/Nasal/liveries.nas</file>
+      <file>Aircraft/A24-Viking/Nasal/light.nas</file>
+      <file>Aircraft/A24-Viking/Nasal/immat.nas</file>
     </a24>    
   </nasal>
  

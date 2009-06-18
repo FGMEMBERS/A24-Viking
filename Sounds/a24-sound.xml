@@ -1,41 +1,47 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
  
 <PropertyList>
 
- <fx>
+  <fx>
  
-  <crank>
-   <name>engstart</name>
-   <path>Sounds/engstart.wav</path>
-   <property>/engines/engine/cranking</property>
-   <volume>
-    <offset>0.4</offset>
-   </volume>
-  </crank>
+    <crank>
+      <name>engstart</name>
+      <path>Sounds/engstart.wav</path>
+      <property>/engines/engine/cranking</property>
+      <volume>
+        <offset>0.4</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
 
-  <crank>
-   <name>crank</name>
-   <mode>looped</mode>
-   <path>Sounds/cranking.wav</path>
-   <condition>
-    <property>/engines/engine/cranking</property>
-    <not>
-     <property>/engines/engine/running</property>
-    </not>
-   </condition>
-   <volume>
-    <offset>0.5</offset>
-   </volume>
-  </crank>
+    <crank>
+      <name>crank</name>
+      <mode>looped</mode>
+      <path>Sounds/cranking.wav</path>
+      <condition>
+        <property>/engines/engine/cranking</property>
+        <not>
+          <property>/engines/engine/running</property>
+        </not>
+      </condition>
+      <volume>
+        <offset>0.5</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
 
-  <crank>
-   <name>cough</name>
-   <path>Sounds/coughing.wav</path>
-   <property>/engines/engine/running</property>
-   <volume>
-    <offset>0.3</offset>
-   </volume>
-  </crank>
+    <crank>
+      <name>cough</name>
+      <path>Sounds/coughing.wav</path>
+      <property>/engines/engine/running</property>
+      <volume>
+        <offset>0.3</offset>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
 
   <engine>
    <name>engine</name>
@@ -66,6 +72,8 @@
     <max>2.0</max>
     <offset>0.15</offset>
    </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
   </engine>
 
   <propeller>
@@ -90,6 +98,8 @@
     <max>2.0</max>
     <offset>0.9</offset>
    </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
   </propeller>
 
   <rumble>
@@ -109,6 +119,8 @@
     <type>log</type>
     <factor>0.25</factor>
    </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
   </rumble>
 
   <squeal>
@@ -141,6 +153,8 @@
     <factor>0.0025</factor>
     <offset>1.2</offset>
    </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
   </squeal>
 
   <rumble>
@@ -161,6 +175,8 @@
     <type>log</type>
     <factor>0.25</factor>
    </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
   </rumble>
 
   <squeal>
@@ -203,6 +219,8 @@
     <offset>0.5</offset>
     <max>1.0</max>
    </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
   </squeal>
  
   <flap>
@@ -217,30 +235,32 @@
    <max-dist>20.0</max-dist>
   </flap>
 
-  <wind>
-   <name>wind</name>
-   <mode>looped</mode>
-   <path>Sounds/wind.wav</path>
-   <property>/velocities/airspeed-kt</property>
-   <volume>
-    <property>/position/altitude-ft</property>
-    <factor>-0.000015</factor>
-    <offset>1.0</offset>
-    <min>0.1</min>
-    <max>1.0</max>
-   </volume>
-   <volume>
-     <property>/velocities/airspeed-kt</property>
-     <factor>0.0015</factor>
-     <min>0.03</min>
-     <max>0.25</max>
-   </volume>
-   <pitch>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.0035</factor>
-    <offset>1.25</offset>
-   </pitch>
-  </wind>
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.0</max>
+      </volume>
+      <volume>
+         <property>/velocities/airspeed-kt</property>
+         <factor>0.0015</factor>
+         <min>0.03</min>
+         <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0035</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </wind>
  
   <stall>
    <name>stall</name>
