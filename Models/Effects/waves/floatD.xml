@@ -16,7 +16,7 @@
           <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
           <value>5</value>
         </greater-than>
-        <property>/gear/gear[6]/wow</property>
+        <property>/gear/gear[7]/wow</property>
       </and>
     </condition>
 

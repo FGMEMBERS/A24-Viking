@@ -34,12 +34,14 @@
     <multiplay>
       <chat_display>1</chat_display>
       <generic>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
+        <int type="int" n="0">0</int>
+        <int type="int" n="1">0</int>
+        <int type="int" n="2">0</int>
+        <int type="int" n="3">0</int>
+        <int type="int" n="4">0</int>
+        <int type="int" n="5">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
       </generic>
     </multiplay>
 
@@ -58,8 +60,10 @@
   </input>
 
   <nasal>
-    <a24>
+    <doors>
       <file>Aircraft/A24-Viking/Nasal/doors.nas</file>
+    </doors>
+    <a24>
       <file>Aircraft/A24-Viking/Nasal/liveries.nas</file>
       <file>Aircraft/A24-Viking/Nasal/light.nas</file>
       <file>Aircraft/A24-Viking/Nasal/immat.nas</file>
