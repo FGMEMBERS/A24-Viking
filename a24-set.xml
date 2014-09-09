@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="a24-jsbsim-cnf.xml"> -->
+<PropertyList include="a24-yasim-cnf.xml">
+
+  <sim>
+    <description>Aeroprakt A 24 Viking</description>
+    <author>BARANGER Emmanuel (3D), GEOFFROY Pierre (FDM), Laurent HAYVEL (Livery)</author>
+  </sim>
+
+</PropertyList>
+
