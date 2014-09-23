@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-  <sim include="Nasal/views.xml">
+  <sim include="Systems/views.xml">
 
+    <description>A 24 Viking (YASim)</description>
     <author>BARANGER Emmanuel (3D), GEOFFROY Pierre (FDM), Laurent HAYVEL (Livery)</author>
-    <aircraft-version>0.1</aircraft-version>
+    <aircraft-version>0.2</aircraft-version>
     <status>Alpha</status>
 
     <fuel-fraction>1.0</fuel-fraction>
@@ -31,32 +32,60 @@
       <engine-rpm type="float">0.0</engine-rpm>
     </a24>
 
-    <multiplay>
-      <chat_display>1</chat_display>
-      <generic>
-        <int type="int" n="0">0</int>
-        <int type="int" n="1">0</int>
-        <int type="int" n="2">0</int>
-        <int type="int" n="3">0</int>
-        <int type="int" n="4">0</int>
-        <int type="int" n="5">0</int>
-        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
-      </generic>
-    </multiplay>
-
     <flaps>
       <setting> 0.00 </setting> <!-- Cruise -->
       <setting> 0.50 </setting> <!-- Half   -->
       <setting> 1.00 </setting> <!-- Full   -->
     </flaps>
-
+    
+    <instrumentation>
+      <path>Aircraft/A24-Viking/Systems/instrumentation.xml</path>
+    </instrumentation>
+    
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int   n="0"  type="int">  0 </int>                                         <!-- 0 immat -->
+        <int   n="1"  type="int">  0 </int>                                         <!-- 1 immat -->
+        <int   n="2"  type="int">  0 </int>                                         <!-- 2 immat -->
+        <int   n="3"  type="int">  0 </int>                                         <!-- 3 immat -->
+        <int   n="4"  type="int">  0 </int>                                         <!-- 4 immat -->
+        <int   n="5"  type="int">  0 </int>                                         <!-- 5 immat -->
+        <int   n="6"  type="bool"> 1 </int>                                         <!-- 6 -->
+        <int   n="7"  type="int">  0 </int>                                         <!-- 7  -->
+        <int   n="8"  alias="/systems/electrical/outputs/nav-lights">  0 </int>     <!-- 8 nav-lights -->
+        <int   n="9"  alias="/sim/model/lights/beacon/state">  false </int>         <!-- 9 strobe-lights -->
+        <float n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2"  alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3"  alias="/position/altitude-ft"> 0 </float>                     <!-- altitude for Smoke/Trail -->
+        <float n="4"  alias="/engines/engine[0]/rpm"/>
+        <float n="5"  alias="/engines/engine[0]/cranking"/>
+        <float n="6"  alias="/gear/gear[0]/wow/"/>
+        <float n="7"  alias="/gear/gear[1]/wow/"/>
+        <float n="8"  alias="/gear/gear[2]/wow/"/>
+        <float n="9"  alias="/gear/gear[3]/wow/"/>
+        <float n="10" alias="/gear/gear[4]/wow/"/>
+        <float n="11" alias="/gear/gear[5]/wow/"/>
+        <float n="12" alias="/gear/gear[6]/wow/"/>
+        <float n="13" alias="/gear/gear[7]/wow/"/>
+        <float n="14" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="15" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="16" alias="/gear/gear[2]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+      </generic>
+    </multiplay>
+    
+    <help include="Systems/help.xml"/>
+    
     <menubar include="Dialogs/a24-menu.xml"/>
 
   </sim>
 
   <input>
-    <keyboard include="Nasal/a24-keyboard.xml"/>
+    <keyboard include="Systems/a24-keyboard.xml"/>
   </input>
 
   <nasal>
@@ -66,9 +95,10 @@
     <a24>
       <file>Aircraft/A24-Viking/Nasal/liveries.nas</file>
       <file>Aircraft/A24-Viking/Nasal/light.nas</file>
-      <file>Aircraft/A24-Viking/Nasal/immat.nas</file>
     </a24>    
+    <immat>
+      <file>Aircraft/A24-Viking/Nasal/immat.nas</file>
+    </immat>
   </nasal>
  
 </PropertyList>
-
