@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>a24.ac</path>
-
+  
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/A24-Viking/Models/Liveries", 10);
-
+      
       var self = cmdarg();
-
+      
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
-
+    
     <unload>
       livery_update.stop();
       crew_door.unalias();
       passenger_door.unalias();
     </unload>
   </nasal>
-
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
@@ -46,7 +46,7 @@
     <object-name>gouvernail</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-
+    
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
@@ -56,7 +56,7 @@
     <object-name>axeA</object-name>
     <object-name>echappe</object-name>
     <object-name>trous</object-name>
-
+    
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>vitreG</object-name>
@@ -64,7 +64,7 @@
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
   </animation>
-
+  
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
@@ -84,7 +84,7 @@
     <object-name>gouvernail</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-
+    
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
@@ -94,41 +94,17 @@
     <object-name>axeA</object-name>
     <object-name>echappe</object-name>
     <object-name>trous</object-name>
-
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
-    <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
-    </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
-
+  
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
@@ -149,46 +125,52 @@
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
   </effect>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/A24-Viking/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitreG</object-name>
     <object-name>vitreD</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitreG</object-name>
     <object-name>vitreD</object-name>
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
-  </animation>
-
-  <!-- Interieur -->
+  </effect>
+  
+  <!-- Cranking effects -->
   <model>
-    <path>Aircraft/A24-Viking/Models/Interior/interior.xml</path>
+    <path>Aircraft/A24-Viking/Models/shadow.xml</path>
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -1.4 </z-m>
     </offsets>
   </model>
-
+  
+  <!-- Interieur -->
+  <model>
+    <usage>interior</usage>
+    <path>Aircraft/A24-Viking/Models/Interior/interior.xml</path>
+  </model>
+  
   <!-- Cranking effects -->
   <model>
     <path>Aircraft/A24-Viking/Models/Effects/cranking/cranking.xml</path>
     <offsets>
-      <x-m> -1.512 </x-m>
-      <y-m> -0.339 </y-m>
-      <z-m>  0.600 </z-m>
+      <x-m> -1.312 </x-m>
+      <y-m> -0.350 </y-m>
+      <z-m>  0.782 </z-m>
       <pitch-deg> -45 </pitch-deg>
     </offsets>
   </model>
-
+  
   <!-- Effets sur le sol -->
   <!-- Roue gauche -->
   <model>
@@ -199,7 +181,7 @@
       <z-m> -1.615 </z-m>
     </offsets>
   </model>
-
+  
   <!-- Roue de droite -->
   <model>
     <path>Aircraft/A24-Viking/Models/Effects/ground/ground1.xml</path>   
@@ -209,7 +191,7 @@
       <z-m> -1.615 </z-m>
     </offsets>
   </model>
-
+  
   <!-- Roulette de queue-->
   <model>
     <path>Aircraft/A24-Viking/Models/Effects/ground/ground2.xml</path>
@@ -219,72 +201,38 @@
       <z-m> -0.730 </z-m>
     </offsets>
   </model>
-
-  <!-- Eclaboussures avant -->
+  
+  <!-- Eclaboussures -->
+  <!-- centrale -->
   <model>
-    <path>Aircraft/A24-Viking/Models/Effects/waves/noze.xml</path>
-    <offsets>
-      <x-m> -3.336 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.891 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model> 
-
-  <!-- Eclaboussures centrale -->
-  <model>
-    <path>Aircraft/A24-Viking/Models/Effects/waves/middle.xml</path>
-    <offsets>
-      <x-m> -0.962 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.947 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model> 
-
-  <!-- Trainée arrière -->
-  <model>
-    <path>Aircraft/A24-Viking/Models/Effects/waves/tail.xml</path>
+    <path>Aircraft/A24-Viking/Models/Effects/waves/wake.xml</path>
     <offsets>
       <x-m>  1.265 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.763 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model> 
-
-  <!-- Trainée flotteur gauche -->
+  
+  <!-- flotteur gauche -->
   <model>
-    <path>Aircraft/A24-Viking/Models/Effects/waves/floatG.xml</path>
+    <path>Aircraft/A24-Viking/Models/Effects/waves/wakeG.xml</path>
     <offsets>
       <x-m> -1.205 </x-m>
       <y-m> -4.400 </y-m>
       <z-m> -0.350 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model> 
-
+  
   <!-- Trainée flotteur droit -->
   <model>
-    <path>Aircraft/A24-Viking/Models/Effects/waves/floatD.xml</path>
+    <path>Aircraft/A24-Viking/Models/Effects/waves/wakeD.xml</path>
     <offsets>
       <x-m> -1.205 </x-m>
       <y-m>  4.400 </y-m>
       <z-m> -0.350 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg> -45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model> 
-
+  
   <!-- L'hélice --> 
   <animation>
     <name>HeliceComplete</name>
@@ -293,7 +241,7 @@
     <object-name>helice</object-name>
     <object-name>bol</object-name>
   </animation>
-
+  
   <!-- Séléction de l'objet visible en fonction des rpm -->
   <animation>
     <type>select</type>
@@ -305,38 +253,44 @@
       </greater-than>
     </condition>
   </animation>
-
+  
   <animation>
     <type>select</type>
     <object-name>propblur</object-name>
     <condition>
-    <and>
-      <greater-than>
-        <property>engines/engine[0]/rpm</property>
-        <value>600.000</value>
-      </greater-than>
-      <less-than>
-        <property>engines/engine[0]/rpm</property>
-        <value>1500.001</value>
-      </less-than>
-    </and>
+      <and>
+        <greater-than>
+          <property>engines/engine[0]/rpm</property>
+          <value>600.000</value>
+        </greater-than>
+        <less-than>
+          <property>engines/engine[0]/rpm</property>
+          <value>1500.001</value>
+        </less-than>
+      </and>
     </condition>
   </animation>
-
+  
   <animation>
     <type>select</type>
     <object-name>helice</object-name>
     <condition>
       <less-than>
         <property>engines/engine[0]/rpm</property>
-	<value>1500</value>
+        <value>1500</value>
       </less-than>
     </condition>
   </animation>
-
+  
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -350,7 +304,7 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
   <!-- Gouvernail -->
   <animation>
     <type>rotate</type>
@@ -368,7 +322,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <!-- Gouverne de direction -->
   <animation>
     <type>rotate</type>
@@ -384,7 +338,7 @@
       <z2-m>  1.059 </z2-m>
     </axis>
   </animation>
-
+  
   <!-- Gouverne de profondeur -->
   <animation>
     <type>rotate</type>
@@ -402,7 +356,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Animations des ailerons -->
   <animation>
     <type>rotate</type>
@@ -420,7 +374,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
@@ -437,7 +391,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Volets -->
   <animation>
     <type>rotate</type>
@@ -455,7 +409,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Rentré de la roue gauche -->
   <animation>
     <type>rotate</type>
@@ -477,7 +431,7 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
   <!-- Rentré de la roue droite -->
   <animation>
     <type>rotate</type>
@@ -499,7 +453,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Compression -->
   <animation>
     <type>translate</type>
@@ -515,7 +469,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>translate</type>
     <object-name>roueD</object-name>
@@ -530,7 +484,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>translate</type>
     <object-name>roueA</object-name>
@@ -545,70 +499,84 @@
       <z> 1 </z>
     </axis>
   </animation>
-
- <!-- Rotation des roues lors du roulage -->
- <animation>
-   <type>spin</type>
-   <object-name>roueG</object-name>
-   <property>gear/gear[0]/rollspeed-ms</property>
-   <factor> 30 </factor>
-   <center>
-     <x-m> -1.572 </x-m>
-     <y-m> -0.812 </y-m>
-     <z-m> -1.402 </z-m>
-   </center>
-   <axis>
-     <x>  0 </x>
-     <y> -1 </y>
-     <z>  0 </z>
-   </axis>
- </animation>
-
- <animation>
-   <type>spin</type>
-   <object-name>roueD</object-name>
-   <property>gear/gear[1]/rollspeed-ms</property>
-   <factor> 30 </factor>
-   <center>
-     <x-m> -1.572 </x-m>
-     <y-m>  0.812 </y-m>
-     <z-m> -1.402 </z-m>
-   </center>
-   <axis>
-     <x>  0 </x>
-     <y> -1 </y>
-     <z>  0 </z>
-   </axis>
- </animation>
-
- <animation>
-   <type>spin</type>
-   <object-name>roueA</object-name>
-   <property>gear/gear[2]/rollspeed-ms</property>
-   <factor> 30 </factor>
-   <center>
-     <x-m>  3.190 </x-m>
-     <y-m>  0.000 </y-m>
-     <z-m> -0.631 </z-m>
-   </center>
-   <axis>
-     <x>  0 </x>
-     <y> -1 </y>
-     <z>  0 </z>
-   </axis>
- </animation>
-
+  
+  <!-- Rotation des roues lors du roulage -->
+  <animation>
+    <type>spin</type>
+    <object-name>roueG</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -1.572 </x-m>
+      <y-m> -0.812 </y-m>
+      <z-m> -1.402 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>roueD</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -1.572 </x-m>
+      <y-m>  0.812 </y-m>
+      <z-m> -1.402 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>roueA</object-name>
+    <property>gear/gear[2]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  3.190 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.631 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
   <!-- Canopy -->
   <animation>
     <name>CanopyG</name>
     <object-name>porteG</object-name>
     <object-name>vitreG</object-name>
   </animation>
-
+  
+  <animation>
+    <type>pick</type>
+    <object-name>CanopyG</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
   <animation>
     <type>translate</type>
     <object-name>CanopyG</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.7 </dep></entry>
@@ -619,17 +587,31 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <name>CanopyD</name>
     <object-name>porteD</object-name>
     <object-name>vitreD</object-name>
   </animation>
-
+  
+  <animation>
+    <type>pick</type>
+    <object-name>CanopyD</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
   <animation>
     <type>translate</type>
     <object-name>CanopyD</object-name>
-    <property>instrumentation/doors/passenger/position-norm</property>
+    <property>sim/model/door-positions/passenger/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.7 </dep></entry>
@@ -640,7 +622,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Ajout des effets lumineux -->
   <model>
     <path>Aircraft/A24-Viking/Models/light/beacon.xml</path>
@@ -650,7 +632,7 @@
       <z-m> 1.103 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/A24-Viking/Models/light/RedLight.xml</path>
     <offsets>
@@ -659,7 +641,16 @@
       <z-m>  0.548 </z-m>
     </offsets>
   </model>
-
+  
+  <model>
+    <path>Aircraft/A24-Viking/Models/light/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -1.166 </x-m>
+      <y-m> -5.479 </y-m>
+      <z-m>  0.548 </z-m>
+    </offsets>
+  </model>
+  
   <model>
     <path>Aircraft/A24-Viking/Models/light/GreenLight.xml</path>
     <offsets>
@@ -668,24 +659,14 @@
       <z-m>  0.548 </z-m>
     </offsets>
   </model>
-
+  
   <model>
-    <path>Aircraft/A24-Viking/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m> -1.166 </x-m>
-      <y-m> -5.479 </y-m>
-      <z-m>  0.548 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/A24-Viking/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/A24-Viking/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m> -1.166 </x-m>
       <y-m>  5.479 </y-m>
       <z-m>  0.548 </z-m>
     </offsets>
   </model>
-
+  
 </PropertyList>
-
