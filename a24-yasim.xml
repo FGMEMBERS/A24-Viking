@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- Fairchild Metroliner : 2010 BARANGER Emmanuel with Melchior's script
+<!-- A24 Viking      : 2010 BARANGER Emmanuel with Melchior's script
+              Update : 2014 BARANGER Emmanuel
 
      Source          : http://www.aeroprakt.kiev.ua/eng_html/main.html
 
@@ -12,7 +13,7 @@
      Max level speed :   165 km/h (   89 kt )
 -->
 
-<airplane mass="1653">
+<airplane mass="1653" version="YASIM_VERSION_CURRENT">
 
   <!-- Approach configuration -->
   <approach speed="40" aoa="10" fuel="0.2">
@@ -50,7 +51,7 @@
         length="5.490" 
         taper="1" 
         camber="0.09">
-        <stall aoa="22" width="2" peak="1.5"/>
+        <stall aoa="22" width="1" peak="1.5"/>
         <flap0 start="0" end="0.545" lift="1.2" drag="1.25"/>
         <flap1 start="0.545" end="1" lift="1.2" drag="1.1"/>
 
@@ -71,7 +72,7 @@
          length="1.807" 
          chord="0.819" 
          sweep="0">
-         <stall aoa="20" width="2" peak="1.5"/>
+         <stall aoa="20" width="1" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.25" drag="1.1" effectiveness="1.25"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -85,7 +86,7 @@
          length="1.6" 
          taper="0.5" 
          sweep="28">
-         <stall aoa="18" width="24" peak="1.5"/>
+         <stall aoa="18" width="1" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.75" drag="1.35"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
@@ -107,27 +108,28 @@
   -->
   <propeller x="2.162" y="0.0" z="0.689" 
              radius="0.90"
-	     cruise-speed="89"
-	     cruise-rpm="2263"
-	     cruise-alt="6000" 
-	     cruise-power="95"
-	     takeoff-power="100" 
-	     takeoff-rpm="2387"
-	     mass="145" 
-	     moment="3.24"  
-	     gear-ratio="0.412" >
+             cruise-speed="89"
+             cruise-rpm="2263"
+             cruise-alt="6000" 
+             cruise-power="95"
+             takeoff-power="100" 
+             takeoff-rpm="2387"
+             mass="145" 
+             moment="3.24"  
+             gear-ratio="0.412" >
              <actionpt x="2.636" y="0.0" z="0.689" />
              <piston-engine eng-rpm="5800" 
                             eng-power="100"
                             displacement="82.6" 
-	                    compression="10.5"/>
-             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
-             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
-             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
-             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+                            compression="10.5">
+                            <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
+                            <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
+                            <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
+                            <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+             </piston-engine>
   </propeller>
 
-  <!-- Left wheel -->
+  <!-- 0 Left wheel -->
   <gear x="1.572" y="0.812" z="-1.615" 
         compression="0.2" 
         retract-time="2"
@@ -142,7 +144,7 @@
         <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
 
-  <!-- Right wheel -->
+  <!-- 1 Right wheel -->
   <gear x="1.572" y="-0.812" z="-1.615" 
         compression="0.2" 
         retract-time="2" 
@@ -157,7 +159,7 @@
         <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   </gear>
 
-  <!-- Tail wheel -->
+  <!-- 2 Tail wheel -->
   <gear x="-3.190" y="0.0" z="-0.730" 
         compression="0.02" 
         retract-time="2" 
@@ -290,7 +292,7 @@
         speed-planing="25" 
         spring-factor-not-planing="3">
         <control-input axis="/controls/gear/water-rudder-pos" control="STEER" invert ="true" square="true"/>
-<!--    <control-input axis="/controls/flight/rudder" control="STEER" invert ="true" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/> -->
+        <!--  <control-input axis="/controls/flight/rudder" control="STEER" invert ="true" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/> -->
   </gear>
 
   <tank x="0.456" y="0" z="-0.310" capacity="56"/>
@@ -303,9 +305,8 @@
 
   <!-- baggage -->
   <weight x="0.4" y="0" z="0.2" mass-prop="/sim/weight[2]/weight-lb"/>
-	
+  
   <!-- Mass distribution -->
   <ballast x="0.69" y="0.0" z="1.65" mass="50"/>
 
 </airplane>
-

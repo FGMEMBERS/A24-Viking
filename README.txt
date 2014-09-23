@@ -1,4 +1,4 @@
-English/Français
+English/FranÃ§ais
 
 [English]
 ----------
@@ -31,13 +31,15 @@ Pierre GEOFFROY for this help
 
 ===============
 BARANGER Emmanuel
-December, 07, 2007. 
+December, 07, 2007
+September, 24, 2014
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
 
 
-[Français]
+[FranÃ§ais]
 ----------
 
 Un peu d'histoire
@@ -48,13 +50,13 @@ A 24 Viking
 
 Constructeur                  : Aeroprakt
 Type                          : 
-Année                         : 
+AnnÃ©e                         : 
 Moteur                        : Rotax 912 ULS (100 ch)
 Envergure                     : 11 m
 Longueur                      : 7.28 m
 Hauteur                       : 3.21 m
-Poids à vide                  : 440 kg
-Vitesse croisière             : 
+Poids Ã  vide                  : 440 kg
+Vitesse croisiÃ¨re             : 
 Autonomie                     : 
 Equipage                      : 
 
@@ -69,7 +71,9 @@ Pierre GEOFFROY pour son aide
 
 ===============
 BARANGER Emmanuel
-07 Décembre 2007.
+07 DÃ©cembre 2007
+24 Septembre 2014
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
